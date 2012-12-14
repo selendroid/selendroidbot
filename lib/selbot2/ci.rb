@@ -2,10 +2,10 @@ module Selbot2
   class CI
     include Cinch::Plugin
 
-    HELPS << [":ci", "Links to Selenium's CI"]
+    HELPS << [":ci", "Links to Selendroid's CI"]
     HELPS << [":ci status", "Summary the current CI state"]
 
-    LINKS = "Jenkins: #{Selbot2::Jenkins::HOST} | Dashboard: http://dashboard.ci.seleniumhq.org/"
+    LINKS = "Jenkins: #{Selbot2::Jenkins::HOST} | Dashboard: http://ci.selendroid.io/"
 
     prefix Selbot2::PREFIX
     match /ci( .+)?/

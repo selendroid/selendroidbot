@@ -5,7 +5,7 @@ require 'pry'
 module Selbot2
   class Git
 
-    def initialize(repo = "seleniumhq/selenium")
+    def initialize(repo = "selendroid/selendroid")
       @repo   = repo
       @client = Octokit.new
     end

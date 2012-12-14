@@ -8,7 +8,7 @@ module Selbot2
     match /whobrokeit/
 
     def execute(m)
-      m.reply "simonstewart"
+      m.reply ["lukeis", "hugs", "jcarr", "dan"][rand(4)]
     end
   end # CI
 end # Selbot2

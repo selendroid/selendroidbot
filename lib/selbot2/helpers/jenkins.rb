@@ -1,6 +1,6 @@
 module Selbot2
   class Jenkins
-    HOST = "http://ci.seleniumhq.org:8080/"
+    HOST = "http://ci.selendroid.io/"
 
     def self.current_status
       new(RestClient::Resource.new(HOST)).current_status

@@ -5,19 +5,20 @@ require 'selbot2'
 Cinch::Bot.new {
   configure do |c|
     c.server = "irc.freenode.net"
-    c.nick   = "selbot2"
+    c.nick   = "selendroidbot"
     c.channels = Selbot2::CHANNELS
     c.plugins.plugins = [
       Selbot2::Issues,
       Selbot2::Revisions,
+      Selbot2::Commits,
       Selbot2::Wiki,
       Selbot2::Youtube,
       Selbot2::Notes,
       Selbot2::Seen,
-      Selbot2::SeleniumHQ,
+#      Selbot2::SeleniumHQ,
       Selbot2::CI,
       Selbot2::Google,
-      Selbot2::WhoBrokeIt
+#      Selbot2::WhoBrokeIt
     ]
 
     # if File.exist?("twitter.conf")
@@ -37,28 +38,23 @@ Cinch::Bot.new {
 
   Selbot2::HELPS << [':log', "link to today's chat log at illictonion"]
   on :message, /:log/ do |m|
-    m.reply "https://raw.github.com/SeleniumHQ/irc-logs/master/#{(Time.new.gmtime - 25200).strftime('%Y/%m/%d')}.txt"
+    m.reply "https://raw.github.com/selendroid/irc-logs/master/#{(Time.new.gmtime - 25200).strftime('%Y/%m/%d')}.txt"
   end
 
   [
     {
       :expression => /:newissue/,
-      :text       => "https://code.google.com/p/selenium/issues/entry",
+      :text       => "https://github.com/selendroid/selendroid/issues/new",
       :help       => "link to issue the tracker"
     },
     {
       :expression => /:(source|code)/,
-      :text       => "https://code.google.com/p/selenium/source/checkout",
+      :text       => "https://github.com/selendroid/selendroid",
       :help       => "link to the source code"
     },
     {
-      :expression => /:apidocs/,
-      :text       => ".NET: http://goo.gl/lvxok | Java: http://goo.gl/Wvl4G | Ruby: http://goo.gl/ue5sM | Python: http://goo.gl/sCwQ3s | Javascript: http://goo.gl/9aYaOG",
-      :help       => "links to API docs"
-    },
-    {
       :expression => /:downloads/,
-      :text       => "http://seleniumhq.org/download/ and https://code.google.com/p/selenium/downloads/list",
+      :text       => "https://github.com/selendroid/selendroid/releases",
       :help       => "links to downloads pages"
     },
     {
@@ -78,38 +74,33 @@ Cinch::Bot.new {
     },
     {
       :expression => /:cla(\W|$)/,
-      :text       => "http://goo.gl/qC50R",
+      :text       => "http://goo.gl/pAvxEI",
       :help       => "link to Selenium's CLA"
     },
     {
+       :expression => /:ci/,
+       :text => "http://ci.selendroid.io/",
+       :help => "links to our ci"
+     },
+     {
+       :expression => /:docs/,
+       :text => "http://selendroid.io/",
+       :help => "links to docs"
+     },
+    {
+      :expression => /:snapshot/,
+      :text       => "http://ci.selendroid.io/job/selendroid/io.selendroid$selendroid-standalone/",
+      :help       => "links to latest snapshot build"
+    },
+    {
       :expression => /:(mailing)?lists?/,
-      :text       => "https://groups.google.com/forum/#!forum/selenium-users | https://groups.google.com/forum/#!forum/selenium-developers",
+      :text       => "http://groups.google.com/group/selendroid",
       :help       => "link to mailing lists"
-    },
-    {
-      :expression => /:chrome(driver)?/,
-      :text       => "https://code.google.com/p/selenium/wiki/ChromeDriver | http://chromedriver.storage.googleapis.com/index.html ",
-      :help       => "link to ChromeDriver (wiki + downloads)"
-    },
-    {
-      :expression => /:clarify/,
-      :text       => "Please clarify: Are you using WebDriver, RC or IDE? What version of Selenium? What programming language? What browser and browser version? What operating system?",
-      :help       => "Please clarify your question."
     },
     {
       :expression => /:change(log|s)\b/,
       :text       => ".NET: http://goo.gl/zBIjE | Java: http://goo.gl/5B23U | Ruby: http://goo.gl/yN6Qm | Python: http://goo.gl/7BtCb | IDE: http://goo.gl/50vLB | IE: http://goo.gl/VYNFyb",
       :help       => "links to change logs"
-    },
-    {
-      :expression => /(can i|how do i|is it possible to).+set (a )?cookies?.*\?/i,
-      :text       => "http://seleniumhq.org/docs/03_webdriver.html#cookies",
-      :help       => "Help people with cookies."
-    },
-    {
-      :expression => /:ignores?/i,
-      :text       => "http://ignores.ci.seleniumhq.org/",
-      :help       => "Link to the @Ignore dashboard."
     },
     {
       :expression => /:(testcase|repro|example|sscce)/i,
@@ -125,11 +116,6 @@ Cinch::Bot.new {
       :expression => /:kittens\b/,
       :text       => "Before you say you cannot provide html, think of the kittens! http://jimevansmusic.blogspot.ca/2012/12/not-providing-html-page-is-bogus.html",
       :help       => "Letting users know they need to provide html"
-    },
-    {
-      :expression => /m-?day/i,
-      :text       => "M-Day: day in the future when Marionette is made available for non-debug builds",
-      :help       => "What is M-day?"
     }
   ].each do |cmd|
     Selbot2::HELPS << [cmd[:expression].source, cmd[:help]]
