@@ -5,7 +5,11 @@ require "time"
 
 module Selbot2
   PREFIX = ":"
+<<<<<<< HEAD
   CHANNELS = Array(ENV['SELBOT_CHANNEL'] || ["#selendroid"])
+=======
+  CHANNELS = Array(ENV['SELBOT_CHANNEL'])
+>>>>>>> adding local logging of chat
   HELPS = []
 end
 
@@ -25,3 +29,4 @@ require 'selbot2/ci'
 # require 'selbot2/twitter'
 require 'selbot2/google'
 require 'selbot2/whobrokeit'
+require 'selbot2/log'

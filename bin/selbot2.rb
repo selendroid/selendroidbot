@@ -18,7 +18,12 @@ Cinch::Bot.new {
 #      Selbot2::SeleniumHQ,
       Selbot2::CI,
       Selbot2::Google,
+<<<<<<< HEAD
 #      Selbot2::WhoBrokeIt
+=======
+      Selbot2::Log,
+      Selbot2::WhoBrokeIt
+>>>>>>> adding local logging of chat
     ]
 
     # if File.exist?("twitter.conf")
