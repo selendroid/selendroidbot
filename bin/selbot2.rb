@@ -40,11 +40,7 @@ Cinch::Bot.new {
 
   Selbot2::HELPS << [':log', "link to today's chat log"]
   on :message, /:log/ do |m|
-<<<<<<< HEAD
     m.reply "https://raw.github.com/selendroid/irc-logs/master/#{(Time.new.gmtime - 25200).strftime('%Y/%m/%d')}.txt"
-=======
-    m.reply "https://raw.github.com/lukeis/appiumlogs/master/#{(Time.new).strftime('%Y/%m/%d')}.txt"
->>>>>>> updating log link
   end
 
   [
