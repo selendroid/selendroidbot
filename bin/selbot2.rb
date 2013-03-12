@@ -20,7 +20,7 @@ Cinch::Bot.new {
       Selbot2::Google,
 #      Selbot2::WhoBrokeIt
       Selbot2::Log,
-      Selbot2::WhoBrokeIt
+#      Selbot2::WhoBrokeIt
     ]
 
     # if File.exist?("twitter.conf")
