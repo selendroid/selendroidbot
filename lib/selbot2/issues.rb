@@ -61,7 +61,7 @@ module Selbot2
     def find(project_name, num)
       return if project_name && project_name =~ /^http/
 
-      project_name ||= "appium/appium"
+      project_name ||= "ios-driver/ios-driver"
 
       case project_name
       when "moz", "mozilla", "bugzilla"

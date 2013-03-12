@@ -75,9 +75,10 @@ Cinch::Bot.new {
       :help       => "Don't ask to ask."
     },
     {
+<<<<<<< HEAD
       :expression => /:cla(\W|$)/,
       :text       => "http://goo.gl/pAvxEI",
-      :help       => "link to Selenium's CLA"
+      :help       => "link to Selendroid's CLA"
     },
     {
        :expression => /:ci/,
@@ -105,19 +106,9 @@ Cinch::Bot.new {
       :help       => "links to change logs"
     },
     {
-      :expression => /:(testcase|repro|example|sscce)/i,
-      :text       => "Please read http://sscce.org/",
-      :help       => "Link to 'Short, Self Contained, Correct (Compilable), Example' site"
-    },
-    {
       :expression => /:(spec|w3c?)/i,
       :text       => "http://dvcs.w3.org/hg/webdriver/raw-file/tip/webdriver-spec.html | http://dvcs.w3.org/hg/webdriver/",
       :help       => "Links to the WebDriver spec."
-    },
-    {
-      :expression => /:kittens\b/,
-      :text       => "Before you say you cannot provide html, think of the kittens! http://jimevansmusic.blogspot.ca/2012/12/not-providing-html-page-is-bogus.html",
-      :help       => "Letting users know they need to provide html"
     }
   ].each do |cmd|
     Selbot2::HELPS << [cmd[:expression].source, cmd[:help]]
