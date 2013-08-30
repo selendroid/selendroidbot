@@ -3,10 +3,10 @@ rvm:
   - 1.9.3
 notifications:
   recipients:
-    - jari.bakken@gmail.com
+    - ddary@acm.org
   irc:
     channels:
-      - "irc.freenode.net#selenium"
+      - "irc.freenode.net#selendroid"
     on_success: change
     on_failure: change
     template:
