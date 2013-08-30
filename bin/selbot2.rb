@@ -40,13 +40,14 @@ Cinch::Bot.new {
 
   Selbot2::HELPS << [':log', "link to today's chat log"]
   on :message, /:log/ do |m|
-    m.reply "https://raw.github.com/selendroid/irc-logs/master/#{(Time.new.gmtime - 25200).strftime('%Y/%m/%d')}.txt"
+    m.reply "https://raw.github.com/selendroid/irc-logs/master/#{(Time.new).strftime('%Y/%m/%d')}.txt"
   end
 
   [
     {
       :expression => /:newissue/,
       :text       => "https://github.com/selendroid/selendroid/issues/new",
+      :text       => "https://github.com/selendroid/selendroid/issues",
       :help       => "link to issue the tracker"
     },
     {
@@ -58,6 +59,11 @@ Cinch::Bot.new {
       :expression => /:downloads/,
       :text       => "https://github.com/selendroid/selendroid/releases",
       :help       => "links to downloads pages"
+    },
+    {
+      :expression => /:docs/,
+      :text       => "http://selendroid.io/",
+      :help       => "links to docs"
     },
     {
       :expression => /:gist/,
@@ -75,7 +81,6 @@ Cinch::Bot.new {
       :help       => "Don't ask to ask."
     },
     {
-<<<<<<< HEAD
       :expression => /:cla(\W|$)/,
       :text       => "http://goo.gl/pAvxEI",
       :help       => "link to Selendroid's CLA"
