@@ -66,6 +66,11 @@ Cinch::Bot.new {
       :help       => "links to docs"
     },
     {
+      :expression => /:spec/,
+      :text       => "w3c: http://goo.gl/t8ZEOq | WebDriver: http://goo.gl/HjT0Xt | Mobile: http://goo.gl/5Mmz7i",
+      :help       => "links to specs"
+    },    
+    {
       :expression => /:gist/,
       :text       => "Please paste >3 lines of text to https://gist.github.com",
       :help       => "link to gist.github.com",
