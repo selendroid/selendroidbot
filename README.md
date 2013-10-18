@@ -1,4 +1,4 @@
-IRC bot for the #selenium channel on freenode.
+IRC bot for the #selendroid channel on freenode.
 
 To run the bot locally, try:
 
