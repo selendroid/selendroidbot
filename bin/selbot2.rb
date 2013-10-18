@@ -47,7 +47,6 @@ Cinch::Bot.new {
     {
       :expression => /:newissue/,
       :text       => "https://github.com/selendroid/selendroid/issues/new",
-      :text       => "https://github.com/selendroid/selendroid/issues",
       :help       => "link to issue the tracker"
     },
     {
@@ -59,6 +58,11 @@ Cinch::Bot.new {
       :expression => /:downloads/,
       :text       => "https://github.com/selendroid/selendroid/releases",
       :help       => "links to downloads pages"
+    },
+    {
+      :expression => /:ci/,
+      :text       => "http://ci.selendroid.io/",
+      :help       => "links to our ci"
     },
     {
       :expression => /:docs/,
@@ -116,7 +120,7 @@ Cinch::Bot.new {
       :help       => "links to change logs"
     },
     {
-      :expression => /:(spec|w3c?)/i,
+      :expression => /:(w3c?)/i,
       :text       => "http://dvcs.w3.org/hg/webdriver/raw-file/tip/webdriver-spec.html | http://dvcs.w3.org/hg/webdriver/",
       :help       => "Links to the WebDriver spec."
     }
