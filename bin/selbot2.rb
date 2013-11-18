@@ -60,6 +60,11 @@ Cinch::Bot.new {
       :help       => "links to downloads pages"
     },
     {
+      :expression => /:snapshot/,
+      :text       => "http://ci.selendroid.io/job/selendroid/io.selendroid$selendroid-standalone/",
+      :help       => "links to latest snapshot build"
+    },    
+    {
       :expression => /:ci/,
       :text       => "http://ci.selendroid.io/",
       :help       => "links to our ci"
