@@ -8,10 +8,10 @@ Cinch::Bot.new {
     c.nick   = "selendroidbot"
     c.channels = Selbot2::CHANNELS
     c.plugins.plugins = [
-      Selbot2::Issues,
-      Selbot2::Revisions,
-      Selbot2::Commits,
-      Selbot2::Wiki,
+#      Selbot2::Issues,
+#      Selbot2::Revisions,
+#      Selbot2::Commits,
+#      Selbot2::Wiki,
       Selbot2::Youtube,
       Selbot2::Notes,
       Selbot2::Seen,
